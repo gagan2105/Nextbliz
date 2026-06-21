@@ -1,0 +1,10 @@
+{
+  "always_run": ["intent-agent", "task-planner-agent", "crm-agent", "chief-of-staff-agent"],
+  "intent_routes": {
+    "schedule_meeting": ["meeting-agent"],
+    "invoice_request": ["invoice-agent"],
+    "support_request": ["customer-support-agent"],
+    "sales_opportunity": ["email-agent"],
+    "general_inquiry": []
+  }
+}

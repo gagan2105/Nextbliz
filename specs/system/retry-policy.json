@@ -1,0 +1,9 @@
+{
+  "queue": "agent-orchestration",
+  "attempts": 3,
+  "backoff": {
+    "type": "exponential",
+    "delay_ms": 1500
+  },
+  "fallback": "run_synchronously_when_redis_is_not_configured"
+}

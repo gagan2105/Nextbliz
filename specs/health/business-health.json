@@ -1,0 +1,9 @@
+{
+  "weights": {
+    "customerSatisfaction": 0.28,
+    "responseTime": 0.16,
+    "invoiceCollection": 0.2,
+    "ticketResolution": 0.2,
+    "leadConversion": 0.16
+  }
+}

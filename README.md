@@ -2,6 +2,15 @@
 
 AI Business Operations Automation Platform built with Spec Driven Development.
 
+## Project Structure
+
+```
+nextbliz/
+├── frontend/    # Vite + React operations console
+├── backend/     # Express + MongoDB API
+└── specs/       # Business rule specifications
+```
+
 ## Stack
 
 - **Frontend:** Vite 6, React 18, Tailwind CSS, TanStack Query, Zustand, Socket.IO
@@ -14,28 +23,54 @@ AI Business Operations Automation Platform built with Spec Driven Development.
 - Node.js 18+
 - MongoDB running locally (or set `MONGODB_URI`)
 
-### Server
+### Backend
 
 ```bash
-cd server
+cd backend
 cp .env.example .env
 npm install
 npm run seed
 npm run dev
 ```
 
-### Client
+### Frontend
 
 ```bash
-cd client
+cd frontend
 npm install
 npm run dev
+```
+
+Or from the project root:
+
+```bash
+npm install
+npm run dev:backend   # terminal 1
+npm run dev:frontend  # terminal 2
 ```
 
 Open http://localhost:5173 and sign in with:
 
 - **Email:** admin@nxtbiz.com
 - **Password:** admin123
+
+## Deployment
+
+| Service  | Folder     | Build              | Start           | Port |
+|----------|------------|--------------------|-----------------|------|
+| Frontend | `frontend/` | `npm run build`    | serve `dist/`   | 5173 |
+| Backend  | `backend/`  | `npm run build`    | `npm start`     | 5000 |
+
+Set these environment variables on the backend:
+
+- `MONGODB_URI`
+- `JWT_ACCESS_SECRET`
+- `JWT_REFRESH_SECRET`
+- `CLIENT_URL` (your deployed frontend URL)
+
+Set on the frontend build:
+
+- `VITE_API_URL` (your deployed backend URL)
 
 ## Features
 
@@ -46,12 +81,3 @@ Open http://localhost:5173 and sign in with:
 - Workflow automation with BullMQ (Redis optional)
 - Live Socket.IO notifications
 - Memory search across customer and agent records
-
-## Development Phases
-
-1. Auth, layout, MongoDB connection
-2. Core CRUD modules
-3. Email intelligence
-4. Agent layer and orchestration
-5. BullMQ, Socket.IO, workflows
-6. PDFs, health scoring, seed data, polish

@@ -6,8 +6,8 @@ node_modules/
 .env.local
 
 # Build output
-client/dist/
-server/storage/pdfs/*.pdf
+frontend/dist/
+backend/storage/pdfs/*.pdf
 
 # Logs
 *.log
@@ -23,3 +23,6 @@ Thumbs.db
 
 # Cursor
 .cursor/
+
+# Legacy folders (remove after migration)
+client/
